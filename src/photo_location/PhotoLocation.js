@@ -1,35 +1,45 @@
 import styled from "@emotion/styled";
-import { Container, Grid, Typography } from "@mui/material";
+import {
+  Alert,
+  Button,
+  Collapse,
+  Container,
+  Grid,
+  IconButton,
+  Typography,
+} from "@mui/material";
 import { Box } from "@mui/system";
-import { getNextKeyDef } from "@testing-library/user-event/dist/keyboard/getNextKeyDef";
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import CloseIcon from "@mui/icons-material/Close";
+import { ArrowBack } from "@mui/icons-material";
+import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
+import { fetchPhotoLocationObject } from "../common/PhotoArrayUtils";
 
 const StyledImg = styled.img({
-  boxShadow: "8px 8px 24px 0px rgba(255, 255, 255, 1)",
+  boxShadow: "2px 2px 12px 0px rgba(1, 1, 1, 1)",
 });
 
-const immageArray = [
-  "https://i.imgur.com/8F6B5K0.png",
-  "https://i.imgur.com/Vwya5M5.png",
-  "https://i.imgur.com/CDRudpF.png",
-  "https://i.imgur.com/NJTNu9H.png",
-  "https://i.imgur.com/9stH0JF.png",
-];
+const TitleSx = styled(Typography)({
+  color: "#111",
+  letterSpacing: ".1rem",
+  textShadow: "-1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5)",
+});
 
 export default function PhotoLocation() {
-  let { location } = useParams();
+  let { coordinate } = useParams();
+  const navigate = useNavigate();
+
+  const photoObject = fetchPhotoLocationObject(coordinate);
 
   const [image, setImage] = useState(0);
-
+  const [open, setOpen] = React.useState(true);
   const [isDown, setIsDown] = useState(false);
   const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(false);
 
   const mouseDownCoords = (e) => {
     e.preventDefault();
     let x = (window.checkForDrag = e.clientX);
-    console.log(x);
 
     setIsDown(true);
     setStartX(x);
@@ -38,15 +48,25 @@ export default function PhotoLocation() {
   const next = () => {
     let temp = image;
     temp++;
-
-    setImage(temp % 5);
+    setImage(Math.abs(temp) % 5);
   };
 
-  const mouseUpHandler = (e) => {
-    e.preventDefault();
-    console.log("upped");
-    setIsDown(false);
+  const prev = () => {
+    let temp = image;
+    temp--;
+
+    if (temp === -1) {
+      temp = 4;
+    }
+
+    setImage(Math.abs(temp) % 5);
   };
+
+  // const mouseUpHandler = (e) => {
+  //   e.preventDefault();
+
+  //   setIsDown(false);
+  // };
 
   const clickOrDrag = (e) => {
     const mouseUp = e.clientX;
@@ -64,8 +84,10 @@ export default function PhotoLocation() {
       console.log("no drag!");
     }
 
-    if (distance !== 0) {
+    if (distance > 0) {
       next();
+    } else if (distance < 0) {
+      prev();
     }
   };
 
@@ -85,30 +107,41 @@ export default function PhotoLocation() {
               item
               container
               direction="row"
+              justifyContent="flex-start"
+              alignItems="center"
+              sx={{ paddingLeft: "2vw" }}
+            >
+              <Grid item xs={"auto"}>
+                <Button
+                  variant="text"
+                  color="error"
+                  size="small"
+                  startIcon={<KeyboardDoubleArrowLeftIcon />}
+                  onClick={() => navigate(-1)}
+                >
+                  home
+                </Button>
+                <TitleSx variant="h1">{photoObject?.id}</TitleSx>
+              </Grid>
+            </Grid>
+
+            <Grid
+              item
+              container
+              direction="row"
               justifyContent="center"
               alignItems="center"
+              sx={{ marginTop: "10vh" }}
             >
-              <Grid item xs={12}>
-                <Typography sx={{ color: "red" }} variant="body2">
-                  Powrót
-                </Typography>
-              </Grid>
-              <Grid item xs={12}>
-                <Typography variant="h1">{location}</Typography>
-              </Grid>
-              <Grid item xs={12} sm={8} md={6} sx={{ marginTop: "1rem" }}>
-                <Typography align="justify">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book. It has survived no only five centuries, but
-                  also the leap into electronic typesetting, remaining
-                  essentially unchanged. It was popularised in the 1960s with
-                  the release of Letraset sheets containing Lorem Ipsum
-                  passages, and more recently with desktop publishing software
-                  like Aldus PageMaker including versions of Lorem Ipsum.
-                </Typography>
+              <Grid
+                item
+                xs={12}
+                sm={10}
+                md={8}
+                lg={6}
+                sx={{ marginTop: "1rem" }}
+              >
+                <Typography align="justify">{photoObject?.que}</Typography>
               </Grid>
             </Grid>
           </Grid>
@@ -121,6 +154,32 @@ export default function PhotoLocation() {
             justifyContent="center"
             alignItems="center"
           >
+            <Grid item xs={12} sx={{ textAlign: "center" }}>
+              <Box sx={{ width: "100%" }}>
+                <Collapse in={open}>
+                  <Alert
+                    variant="outlined"
+                    severity="info"
+                    sx={{ opacity: "0.6", color: "#FFF", border: "none" }}
+                    icon={false}
+                    action={
+                      <IconButton
+                        aria-label="close"
+                        color="inherit"
+                        size="small"
+                        onClick={() => {
+                          setOpen(false);
+                        }}
+                      >
+                        <CloseIcon fontSize="inherit" />
+                      </IconButton>
+                    }
+                  >
+                    Swipe left or right to change photos
+                  </Alert>
+                </Collapse>
+              </Box>
+            </Grid>
             <Grid item xs={12}>
               <Box
                 style={{
@@ -140,8 +199,10 @@ export default function PhotoLocation() {
                     style={{
                       width: "95%",
                       height: "auto",
+                      filter: "blur(2px)",
+                      borderRadius: "4px",
                     }}
-                    src={immageArray[(image + 1) % 5]}
+                    src={photoObject?.images[(image + 1) % 5]}
                     alt="chruch"
                   />
                 </Box>
@@ -158,38 +219,30 @@ export default function PhotoLocation() {
                     style={{
                       width: "100%",
                       height: "auto",
+                      cursor: "pointer",
+                      borderRadius: "4px",
                     }}
-                    src={immageArray[image]}
+                    src={photoObject?.images[image]}
                     alt="chruch"
                     onMouseDown={(e) => mouseDownCoords(e)}
                     onMouseUp={(e) => clickOrDrag(e)}
                   />
                 </Box>
-
-                {/* <img
-                  style={{
-                    float: "left",
-                    //position: "relative",
-                    top: "0",
-                    left: "0",
-                    zIndex: 1,
-                  }}
-                  src="https://i.imgur.com/Vwya5M5.png"
-                  alt="chruch"
-                />
-                <img
-                  style={{
-                    //position: "absolute",
-                    top: "30",
-                    float: "left",
-                    left: "30",
-                    border: "1px solid red",
-                    zIndex: 2,
-                  }}
-                  src="https://i.imgur.com/Vwya5M5.png"
-                  alt="chruch"
-                /> */}
               </Box>
+            </Grid>
+            <Grid item xs={12} sx={{ textAlign: "center", marginTop: "5vh" }}>
+              <Typography
+                sx={{
+                  fontSize: "21pt",
+                  fontWeight: "600",
+                  //color: "rgba(255,255,255,.3)",
+                  color: "#DDD",
+                  textShadow: "0 0 7px rgba(255,255,255,.5)",
+                }}
+              >
+                <span style={{ fontSize: "28pt" }}>{image + 1}</span>
+                {` / 5`}
+              </Typography>
             </Grid>
           </Grid>
         </Grid>
