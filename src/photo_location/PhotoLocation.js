@@ -1,29 +1,25 @@
 import styled from "@emotion/styled";
-import {
-  Alert,
-  Button,
-  Collapse,
-  Container,
-  Grid,
-  IconButton,
-  Typography,
-} from "@mui/material";
+import { Button, Collapse, Container, Grid } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import CloseIcon from "@mui/icons-material/Close";
-import { ArrowBack } from "@mui/icons-material";
+
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
-import { fetchPhotoLocationObject } from "../common/PhotoArrayUtils";
+import QuoteSection from "../common/components/QuoteSection";
+import TitleSection from "../common/components/TitleSection";
+import LeviButton from "../common/components/LeviButton";
+import GlowyTypography from "../common/components/GlowyTypography";
+import TransparentAlert from "../common/components/TransparentAlert";
+import { fetchPhotoLocationObject } from "../common/photoUtils";
+import Copyrights from "../common/components/Copyrights";
 
 const StyledImg = styled.img({
   boxShadow: "2px 2px 12px 0px rgba(1, 1, 1, 1)",
-});
-
-const TitleSx = styled(Typography)({
-  color: "#111",
-  letterSpacing: ".1rem",
-  textShadow: "-1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5)",
+  width: "100%",
+  height: "auto",
+  cursor: "pointer",
+  borderRadius: "2px",
+  filter: "grayscale(100%)",
 });
 
 export default function PhotoLocation() {
@@ -34,14 +30,14 @@ export default function PhotoLocation() {
 
   const [image, setImage] = useState(0);
   const [open, setOpen] = React.useState(true);
-  const [isDown, setIsDown] = useState(false);
+  //const [isDown, setIsDown] = useState(false);
   const [startX, setStartX] = useState(0);
 
   const mouseDownCoords = (e) => {
     e.preventDefault();
     let x = (window.checkForDrag = e.clientX);
 
-    setIsDown(true);
+    //setIsDown(true);
     setStartX(x);
   };
 
@@ -116,12 +112,14 @@ export default function PhotoLocation() {
                   variant="text"
                   color="error"
                   size="small"
-                  startIcon={<KeyboardDoubleArrowLeftIcon />}
                   onClick={() => navigate(-1)}
                 >
-                  home
+                  <KeyboardDoubleArrowLeftIcon />
                 </Button>
-                <TitleSx variant="h1">{photoObject?.id}</TitleSx>
+                <TitleSection
+                  title={photoObject?.title.toUpperCase()}
+                  sub={photoObject?.subt}
+                />
               </Grid>
             </Grid>
 
@@ -133,16 +131,10 @@ export default function PhotoLocation() {
               alignItems="center"
               sx={{ marginTop: "10vh" }}
             >
-              <Grid
-                item
-                xs={12}
-                sm={10}
-                md={8}
-                lg={6}
-                sx={{ marginTop: "1rem" }}
-              >
-                <Typography align="justify">{photoObject?.que}</Typography>
-              </Grid>
+              <QuoteSection
+                comment={photoObject?.que}
+                time={photoObject?.time}
+              />
             </Grid>
           </Grid>
         </Grid>
@@ -154,32 +146,19 @@ export default function PhotoLocation() {
             justifyContent="center"
             alignItems="center"
           >
-            <Grid item xs={12} sx={{ textAlign: "center" }}>
+            {/* <Grid item xs={12} sx={{ textAlign: "center" }}>
               <Box sx={{ width: "100%" }}>
                 <Collapse in={open}>
-                  <Alert
-                    variant="outlined"
-                    severity="info"
-                    sx={{ opacity: "0.6", color: "#FFF", border: "none" }}
-                    icon={false}
-                    action={
-                      <IconButton
-                        aria-label="close"
-                        color="inherit"
-                        size="small"
-                        onClick={() => {
-                          setOpen(false);
-                        }}
-                      >
-                        <CloseIcon fontSize="inherit" />
-                      </IconButton>
-                    }
+                  <TransparentAlert
+                    action={() => {
+                      setOpen(false);
+                    }}
                   >
                     Swipe left or right to change photos
-                  </Alert>
+                  </TransparentAlert>
                 </Collapse>
               </Box>
-            </Grid>
+            </Grid> */}
             <Grid item xs={12}>
               <Box
                 style={{
@@ -193,6 +172,7 @@ export default function PhotoLocation() {
                     position: "relative",
                     top: "0px",
                     left: "0px",
+                    filter: "grayscale(85%)",
                   }}
                 >
                   <img
@@ -200,7 +180,7 @@ export default function PhotoLocation() {
                       width: "95%",
                       height: "auto",
                       filter: "blur(2px)",
-                      borderRadius: "4px",
+                      borderRadius: "2px",
                     }}
                     src={photoObject?.images[(image + 1) % 5]}
                     alt="chruch"
@@ -216,12 +196,6 @@ export default function PhotoLocation() {
                   }}
                 >
                   <StyledImg
-                    style={{
-                      width: "100%",
-                      height: "auto",
-                      cursor: "pointer",
-                      borderRadius: "4px",
-                    }}
                     src={photoObject?.images[image]}
                     alt="chruch"
                     onMouseDown={(e) => mouseDownCoords(e)}
@@ -231,21 +205,15 @@ export default function PhotoLocation() {
               </Box>
             </Grid>
             <Grid item xs={12} sx={{ textAlign: "center", marginTop: "5vh" }}>
-              <Typography
-                sx={{
-                  fontSize: "21pt",
-                  fontWeight: "600",
-                  //color: "rgba(255,255,255,.3)",
-                  color: "#DDD",
-                  textShadow: "0 0 7px rgba(255,255,255,.5)",
-                }}
-              >
+              <GlowyTypography>
                 <span style={{ fontSize: "28pt" }}>{image + 1}</span>
                 {` / 5`}
-              </Typography>
+              </GlowyTypography>
             </Grid>
           </Grid>
         </Grid>
+        <Copyrights />
+        <LeviButton />
       </Grid>
     </Container>
   );
