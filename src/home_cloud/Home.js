@@ -35,11 +35,12 @@ export default function Home() {
         >
           <Grid item xs={8} sx={{ textAlign: "center" }}>
             <TagCloud
-              disableRandomColor
-              minSize={12}
-              maxSize={35}
+              minSize={22}
+              maxSize={38}
               tags={CLOUD_DATA}
               randomSeed="11"
+              colorOptions={{ luminosity: "dark", hue: "blue" }}
+              disableRandomColor={false}
               onClick={(tag) => switchToLocation(tag.value)}
               style={{
                 cursor: "pointer",

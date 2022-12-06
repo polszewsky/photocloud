@@ -1,16 +1,11 @@
-import { KeyboardDoubleArrowLeft } from "@mui/icons-material";
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
-import { useNavigate } from "react-router-dom";
+
 import Copyrights from "../common/components/Copyrights";
 import LeviButton from "../common/components/LeviButton";
-import QuoteSection from "../common/components/QuoteSection";
-import TitleSection from "../common/components/TitleSection";
 
 export default function About() {
-  const navigate = useNavigate();
-
   return (
     <Container>
       <Grid
@@ -34,14 +29,16 @@ export default function About() {
                 height: "auto",
                 borderRadius: "4px",
               }}
-              src={"https://i.imgur.com/9stH0JF.png"}
+              src={"https://i.imgur.com/KEfXsccl.jpg"}
               alt="chruch"
             />
           </Grid>
         </Grid>
 
         <Grid item sx={{ marginTop: "1rem" }}>
-          <Typography variant="h4">about me</Typography>
+          <Typography variant="h4" sx={{ color: "#DF3C3C" }}>
+            about me
+          </Typography>
         </Grid>
         <Grid
           item
@@ -53,15 +50,24 @@ export default function About() {
         >
           <Grid item xs={12} sm={6} md={6}>
             <Typography variant="subtitle1">
-              Hi, I'm Peter & I happen to be a web developer. This small and
-              basic app with codename `PHOTOCLOUD` is a demonstration of
-              knowlege about web technologies. It's a vertical slice of my
-              interests combined with my work as full stack web developer.{" "}
+              Hi, name's Peter & I happen to be a (senior but small-scale) full
+              stack dev with 7 years of experience in various web technologies.
+              Graduated from univeristy with Masters in IT with Databases &
+              Systems specialization. This small and basic app, codename
+              `PHOTOCLOUD` is a vertical slice of my what I use in my work as a
+              web developer{" "}
+              <span style={{ fontStyle: "italic" }}>
+                (combined with my love for photography)
+              </span>
+              . <br />
+              <br />
+              <b style={{ color: "#5F777D" }}>
+                Made using: ReactJS + Redux, NodeJs, MaterialUI 5, Router6,
+                Github, Docker, Figma
+              </b>
               <br />
               <br />
-              Front: ReactJS, Redux, TypeScript, MUI5, Router6, Git, Docker,
-              Figma
-              <br />
+              Comments created with jsonplaceholder.typicode.com
               <br />
               Homepage created with react-tagcloud by @madox2
             </Typography>

@@ -2,7 +2,7 @@ import { FormatQuote } from "@mui/icons-material";
 import { Grid, Typography } from "@mui/material";
 import React from "react";
 
-export default function QuoteSection(props) {
+export default function Quote(props) {
   const { comment = "", time = "", ...rest } = props;
   return (
     <Grid
@@ -14,7 +14,8 @@ export default function QuoteSection(props) {
       sx={{
         marginTop: "1rem",
         borderLeft: "5px solid #75949b",
-        background: "rgba(230,230,230,.2)",
+        //backgroundColor: "rgba(230,230,230,.2)",
+        background: "#F1F1F1",
         paddingLeft: "1rem",
         paddingRight: "1rem",
         boxShadow: "4px 4px 6px -4px rgba(1,1,1,.1)",

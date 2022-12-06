@@ -10,7 +10,11 @@ export default function LeviButton() {
 
   const actions = [
     { icon: <HomeMaxIcon />, name: "Home", path: "/" },
-    { icon: <PersonIcon />, name: "About Me", path: "/about" },
+    {
+      icon: <PersonIcon sx={{ color: "#DF3C3C" }} />,
+      name: "About Me",
+      path: "/about",
+    },
   ];
 
   return (

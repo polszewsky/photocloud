@@ -6,9 +6,9 @@ export default function TransparentAlert({ children, action }) {
   return (
     <Alert
       variant="outlined"
-      severity="info"
-      sx={{ opacity: "0.6", color: "#FFF", border: "none" }}
-      icon={false}
+      severity="error"
+      sx={{ opacity: "1", border: "none" }}
+      //icon={false}
       action={
         <IconButton
           aria-label="close"
