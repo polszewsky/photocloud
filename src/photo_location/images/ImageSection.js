@@ -44,8 +44,6 @@ export default function ImageSection() {
 
     e.preventDefault();
     let x = (window.checkForDrag = e.clientX);
-
-    //setIsDown(true);
     setStartX(x);
   };
 
@@ -65,12 +63,6 @@ export default function ImageSection() {
 
     setImage(Math.abs(temp) % 5);
   };
-
-  // const mouseUpHandler = (e) => {
-  //   e.preventDefault();
-
-  //   setIsDown(false);
-  // };
 
   const clickOrDrag = (e) => {
     const mouseUp = e.clientX;
