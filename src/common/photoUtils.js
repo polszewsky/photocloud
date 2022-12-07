@@ -303,11 +303,11 @@ const montpellier = {
   subt: "fr",
   que: "My sister used to study there. Great place, I wish I could go there again.",
   images: [
-    "https://i.imgur.com/BGBiNZkl.jpg",
-    "https://i.imgur.com/sbKhUoVl.jpg",
-    "https://i.imgur.com/q8uoq3kl.jpg",
-    "https://i.imgur.com/mcAM9VQl.jpg",
-    "https://i.imgur.com/lX0vCK4l.jpg",
+    "https://i.imgur.com/SRtxAKBl.jpg",
+    "https://i.imgur.com/wRnaJ43l.jpg",
+    "https://i.imgur.com/M7SBQHNl.jpg",
+    "https://i.imgur.com/l9nfQOhl.jpg",
+    "https://i.imgur.com/iMlnJIbl.jpg",
   ],
   time: "June, 2015",
 };
@@ -331,11 +331,11 @@ const paris = {
   subt: "fr",
   que: "Paris... It speaks for itself. The home of the Exposition Universelle in 1878, Maria Curie and Oscar Wilde. Seen them graves, touched them stones.",
   images: [
-    "https://i.imgur.com/6gLU7oQl.jpg",
-    "https://i.imgur.com/3gUWhbOl.jpg",
-    "https://i.imgur.com/IEbzAbbl.jpg",
-    "https://i.imgur.com/ou7LIJ0l.jpg",
-    "https://i.imgur.com/yPESzwFl.jpg",
+    "https://i.imgur.com/xzM7LT1l.jpg",
+    "https://i.imgur.com/HInwd3Bl.jpg",
+    "https://i.imgur.com/aGYtZEZl.jpg",
+    "https://i.imgur.com/mvzXMjrl.jpg",
+    "https://i.imgur.com/PnF5h4Pl.jpg",
   ],
   time: "July, 2012",
 };
