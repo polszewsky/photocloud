@@ -193,7 +193,7 @@ const akwizgran = {
     "https://i.imgur.com/xCUsLp5l.jpg",
     "https://i.imgur.com/ZxawkOql.jpg",
   ],
-  time: "Juli, 2018",
+  time: "June, 2018",
 };
 
 const normandy = {
@@ -207,7 +207,7 @@ const normandy = {
     "https://i.imgur.com/YJ2LkwXl.jpg",
     "https://i.imgur.com/WRqot57l.jpg",
   ],
-  time: "Juli, 2018",
+  time: "June, 2018",
 };
 
 const nantes = {
@@ -222,7 +222,7 @@ const nantes = {
     "https://i.imgur.com/U9N8sT6l.jpg",
     "https://i.imgur.com/LWRnqMal.jpg",
   ],
-  time: "Juli, 2018",
+  time: "June, 2018",
 };
 
 const mont_saint_michel = {
@@ -237,7 +237,7 @@ const mont_saint_michel = {
     "https://i.imgur.com/Nj837Ejl.jpg",
     "https://i.imgur.com/e3e7Maxl.jpg",
   ],
-  time: "Juli, 2018",
+  time: "June, 2018",
 };
 
 const aigues_mortes = {
@@ -252,7 +252,7 @@ const aigues_mortes = {
     "https://i.imgur.com/tS3TwAdl.jpg",
     "https://i.imgur.com/sI0Ddu8l.jpg",
   ],
-  time: "Juli, 2018",
+  time: "June, 2018",
 };
 
 const carcassonne = {
@@ -266,7 +266,7 @@ const carcassonne = {
     "https://i.imgur.com/S8CmwpUl.jpg",
     "https://i.imgur.com/1Ua04Wjl.jpg",
   ],
-  time: "Juli, 2018",
+  time: "June, 2018",
 };
 
 const arles = {
@@ -280,7 +280,7 @@ const arles = {
     "https://i.imgur.com/0fUxqlFl.jpg",
     "https://i.imgur.com/SazY8p6l.jpg",
   ],
-  time: "Juli, 2015",
+  time: "June, 2015",
 };
 
 const pont_du_gard = {
@@ -295,7 +295,7 @@ const pont_du_gard = {
     "https://i.imgur.com/mcAM9VQl.jpg",
     "https://i.imgur.com/lX0vCK4l.jpg",
   ],
-  time: "Juli, 2015",
+  time: "June, 2015",
 };
 
 const montpellier = {
@@ -309,7 +309,7 @@ const montpellier = {
     "https://i.imgur.com/mcAM9VQl.jpg",
     "https://i.imgur.com/lX0vCK4l.jpg",
   ],
-  time: "Juli, 2015",
+  time: "June, 2015",
 };
 
 const avinion = {
@@ -323,7 +323,7 @@ const avinion = {
     "https://i.imgur.com/ou7LIJ0l.jpg",
     "https://i.imgur.com/yPESzwFl.jpg",
   ],
-  time: "Juli, 2015",
+  time: "June, 2015",
 };
 
 const paris = {
