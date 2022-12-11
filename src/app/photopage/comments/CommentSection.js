@@ -1,8 +1,8 @@
 import { Collapse, Grid, Typography } from "@mui/material";
 import React, { Fragment, useState } from "react";
 import { useSelector } from "react-redux";
-import CommentEntry from "../../common/components/CommentEntry";
-import CommentsButton from "../../common/components/CommentsButton";
+import CommentEntry from "../../../common/components/CommentEntry";
+import CommentsButton from "../../../common/components/CommentsButton";
 
 export default function CommentSection() {
   const { comments = [] } = useSelector((store) => store.commentSection);
@@ -36,7 +36,7 @@ export default function CommentSection() {
           </Grid>
           <Collapse in={open}>
             <Fragment>
-              <Grid item sx={{ marginTop: "1rem" }}>
+              {/* <Grid item sx={{ marginTop: "1rem" }}>
                 <Grid container item direction="row">
                   <Grid item xs={12} sx={{ textAlign: "center" }}>
                     <Typography
@@ -51,7 +51,7 @@ export default function CommentSection() {
                     </Typography>
                   </Grid>
                 </Grid>
-              </Grid>
+              </Grid> */}
               <Grid item sx={{ marginTop: "1rem" }}>
                 <Grid container item direction="row" spacing={2}>
                   {comments.map((comment, index) => (

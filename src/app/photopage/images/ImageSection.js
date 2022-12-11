@@ -1,10 +1,11 @@
 import styled from "@emotion/styled";
 import { Box, Collapse, Grid } from "@mui/material";
 import React, { useState } from "react";
+import { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import GlowyTypography from "../../common/components/GlowyTypography";
-import TransparentAlert from "../../common/components/TransparentAlert";
-import { hideHelpAlert } from "../photoLocationSlice";
+import GlowyTypography from "../../../common/components/GlowyTypography";
+import TransparentAlert from "../../../common/components/TransparentAlert";
+import { hideHelpAlert, setPhotoDialogOpen } from "../photoLocationSlice";
 
 const StyledImg = styled.img({
   boxShadow: "2px 2px 12px 0px rgba(1, 1, 1, 1)",
@@ -64,7 +65,7 @@ export default function ImageSection() {
     setImage(Math.abs(temp) % 5);
   };
 
-  const clickOrDrag = (e) => {
+  const clickOrDrag = (e, image) => {
     const mouseUp = e.clientX;
 
     const distance = mouseUp - startX;
@@ -73,7 +74,7 @@ export default function ImageSection() {
       mouseUp < window.checkForDrag + 6 &&
       mouseUp > window.checkForDrag - 6
     ) {
-      console.log("clicked!");
+      (() => dispatch(setPhotoDialogOpen(image)))();
     }
 
     if (Math.abs(distance) < 75) {
@@ -92,25 +93,29 @@ export default function ImageSection() {
       item
       container
       direction="row"
-      justifyContent="flex-left"
+      justifyContent="center"
       alignItems="center"
+      sx={{ marginTop: "1rem" }}
     >
       {!disabled && (
-        <Grid item xs={8} sx={{ textAlign: "flex-left" }}>
-          <Box sx={{ width: "100%" }}>
-            <Collapse in={helpShown}>
-              <TransparentAlert
-                action={() => {
-                  dispatch(hideHelpAlert());
-                }}
-              >
-                Swipe left or right to change photos
-              </TransparentAlert>
-            </Collapse>
-          </Box>
-        </Grid>
+        <Fragment>
+          <Grid item xs="auto" sx={{ textAlign: "flex-left" }}>
+            <Box sx={{ width: "100%" }}>
+              <Collapse in={helpShown}>
+                <TransparentAlert
+                  action={() => {
+                    dispatch(hideHelpAlert());
+                  }}
+                >
+                  Swipe left or right to change photos
+                </TransparentAlert>
+              </Collapse>
+            </Box>
+          </Grid>
+          <Box width="100%" />
+        </Fragment>
       )}
-      <Grid item xs={12}>
+      <Grid item xs="auto">
         <Box
           sx={{
             position: "relative",
@@ -124,7 +129,7 @@ export default function ImageSection() {
                 position: "relative",
                 top: "0px",
                 left: "0px",
-                filter: "grayscale(85%)",
+                filter: "grayscale(90%)",
               }}
             >
               <img
@@ -132,7 +137,7 @@ export default function ImageSection() {
                   width: "auto",
                   height: "auto",
                   filter: "blur(2px)",
-                  borderRadius: "2px",
+                  borderRadius: "1px",
                 }}
                 src={
                   photoLocation?.images &&
@@ -156,13 +161,15 @@ export default function ImageSection() {
               src={photoLocation?.images && photoLocation?.images[image]}
               alt="chruch"
               onMouseDown={(e) => mouseDownCoords(e)}
-              onMouseUp={(e) => !disabled && clickOrDrag(e)}
+              onMouseUp={(e) =>
+                !disabled && clickOrDrag(e, photoLocation?.images[image])
+              }
             />
           </Box>
         </Box>
       </Grid>
       {!disabled && (
-        <Grid item xs={12} sx={{ textAlign: "center", marginTop: "5vh" }}>
+        <Grid item xs={12} sx={{ textAlign: "center", marginTop: "1rem" }}>
           <GlowyTypography>
             <span style={{ fontSize: "28pt" }}>{image + 1}</span>
             {` / 5`}

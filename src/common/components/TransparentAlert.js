@@ -1,5 +1,5 @@
 import { Close } from "@mui/icons-material";
-import { Alert, IconButton } from "@mui/material";
+import { Alert, IconButton, Typography } from "@mui/material";
 import React from "react";
 
 export default function TransparentAlert({ children, action }) {
@@ -7,8 +7,8 @@ export default function TransparentAlert({ children, action }) {
     <Alert
       variant="outlined"
       severity="error"
-      sx={{ opacity: "1", border: "none" }}
-      //icon={false}
+      sx={{ opacity: "1", border: "none", color: "#DF3C3C" }}
+      icon={false}
       action={
         <IconButton
           aria-label="close"
@@ -20,7 +20,9 @@ export default function TransparentAlert({ children, action }) {
         </IconButton>
       }
     >
-      {children}
+      <Typography sx={{ color: "#DF3C3C", textTransform: "uppercase" }}>
+        {children}
+      </Typography>
     </Alert>
   );
 }

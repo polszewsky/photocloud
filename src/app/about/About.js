@@ -1,9 +1,8 @@
 import { Grid, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
-
-import Copyrights from "../common/components/Copyrights";
-import LeviButton from "../common/components/LeviButton";
+import Copyrights from "../../common/components/Copyrights";
+import LeviButton from "../../common/components/LeviButton";
 
 export default function About() {
   return (
@@ -20,7 +19,7 @@ export default function About() {
           direction="row"
           justifyContent="center"
           alignItems="center"
-          sx={{ marginTop: "10vh" }}
+          sx={{ marginTop: "1vh" }}
         >
           <Grid item xs={12} sm={6} md={6}>
             <img
@@ -49,7 +48,7 @@ export default function About() {
           sx={{ marginTop: "1rem" }}
         >
           <Grid item xs={12} sm={6} md={6}>
-            <Typography variant="subtitle1">
+            <Typography variant="subtitle1" sx={{ textAlign: "justify" }}>
               Hi, name's Peter & I happen to be a (senior but small-scale) full
               stack dev with 7 years of experience in various web technologies.
               Graduated from univeristy with Masters in IT with Databases &
@@ -74,8 +73,6 @@ export default function About() {
           </Grid>
         </Grid>
       </Grid>
-      <Copyrights />
-      <LeviButton />
     </Container>
   );
 }

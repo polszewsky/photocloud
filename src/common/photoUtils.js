@@ -1,32 +1,34 @@
 const getRandomArbitrary = (min, max) => Math.random() * (max - min) + min;
 
+const min = 40;
+const max = 48;
+
 // cloud data array
 export const CLOUD_DATA = [
-  { value: "About", count: 35, color: "#DF3C3C" },
   //north
-  { value: "Helsinki", count: getRandomArbitrary(25, 35) }, //done
-  { value: "Tallinn", count: getRandomArbitrary(30, 35) }, //done
-  { value: "Oslo", count: getRandomArbitrary(30, 35) }, //done
+  { value: "Helsinki", count: getRandomArbitrary(min, max) }, //done
+  { value: "Tallinn", count: getRandomArbitrary(min, max) }, //done
+  { value: "Oslo", count: getRandomArbitrary(min, max) }, //done
   //france
-  { value: "Nantes", count: getRandomArbitrary(30, 35) }, //done
-  { value: "Paris", count: getRandomArbitrary(30, 35) }, //done
-  { value: "Montpellier", count: getRandomArbitrary(30, 35) }, //done
-  { value: "Pont-du-Gard", count: getRandomArbitrary(30, 35) }, //done
-  { value: "Avinion", count: getRandomArbitrary(30, 35) }, //done
-  { value: "Normandy", count: getRandomArbitrary(30, 35) }, //done
-  { value: "Arles", count: getRandomArbitrary(30, 35) }, //done
-  { value: "Carcassonne", count: getRandomArbitrary(30, 35) }, //done
-  { value: "Mont-Saint-Michel", count: getRandomArbitrary(30, 35) },
-  { value: "Aigues-Mortes", count: getRandomArbitrary(30, 35) }, //done
+  { value: "Nantes", count: getRandomArbitrary(min, max) }, //done
+  { value: "Paris", count: getRandomArbitrary(min, max) }, //done
+  { value: "Montpellier", count: getRandomArbitrary(min, max) }, //done
+  { value: "Pont-du-Gard", count: getRandomArbitrary(min, max) }, //done
+  { value: "Avinion", count: getRandomArbitrary(min, max) }, //done
+  { value: "Normandy", count: getRandomArbitrary(min, max) }, //done
+  { value: "Arles", count: getRandomArbitrary(min, max) }, //done
+  { value: "Carcassonne", count: getRandomArbitrary(min, max) }, //done
+  { value: "Mont-Saint-Michel", count: getRandomArbitrary(min, max) },
+  { value: "Aigues-Mortes", count: getRandomArbitrary(min, max) }, //done
   //poland
-  { value: "Gdańsk", count: getRandomArbitrary(30, 35) }, // done
-  { value: "Drifts", count: getRandomArbitrary(30, 35) }, //done
-  { value: "LMF22", count: getRandomArbitrary(30, 35) }, //done
-  { value: "Strelitz", count: getRandomArbitrary(30, 35) }, //done
-  { value: "Szczawnica", count: getRandomArbitrary(30, 35) }, //done
+  { value: "Gdańsk", count: getRandomArbitrary(min, max) }, // done
+  { value: "Drifts", count: getRandomArbitrary(min, max) }, //done
+  { value: "LMF22", count: getRandomArbitrary(min, max) }, //done
+  { value: "Strelitz", count: getRandomArbitrary(min, max) }, //done
+  { value: "Szczawnica", count: getRandomArbitrary(min, max) }, //done
   //south
-  { value: "Warna", count: getRandomArbitrary(30, 35) }, //done
-  { value: "Akwizgran", count: getRandomArbitrary(30, 35) }, //done
+  { value: "Warna", count: getRandomArbitrary(min, max) }, //done
+  { value: "Akwizgran", count: getRandomArbitrary(min, max) }, //done
 ];
 
 // location places objects

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchWrapper, getResponseTemplate } from "../../common/urlUtils";
+import { fetchWrapper, getResponseTemplate } from "../../../common/urlUtils";
 
 const commentSectionSlice = createSlice({
   name: "commentSection",

@@ -3,7 +3,7 @@ import { Button, Grid } from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import TitleSection from "../../common/components/TitleSection";
+import TitleSection from "../../../common/components/TitleSection";
 import Quote from "./Quote";
 
 export default function QuotesStructure() {
@@ -18,19 +18,19 @@ export default function QuotesStructure() {
       direction="column"
       justifyContent="center"
       alignItems="center"
-      sx={{ marginTop: "10vh" }}
+      sx={{ marginTop: "1rem" }}
     >
       <Grid
         item
         container
         direction="row"
-        justifyContent="flex-start"
+        justifyContent="center"
         alignItems="center"
-        sx={{ paddingLeft: "2vw" }}
+        // sx={{ paddingLeft: "2vw" }}
       >
         <Grid item xs={12}>
           <Button
-            variant="text"
+            variant="outlined"
             color="error"
             size="small"
             onClick={() => navigate(-1)}
@@ -53,7 +53,6 @@ export default function QuotesStructure() {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        sx={{ marginTop: "10vh" }}
       >
         <Quote comment={photoLocation?.que} time={photoLocation?.time} />
       </Grid>
