@@ -123,7 +123,7 @@ export default function ImageSection() {
             left: "0px",
           }}
         >
-          {
+          {!disabled && (
             <Box
               sx={{
                 position: "relative",
@@ -147,12 +147,12 @@ export default function ImageSection() {
                 onMouseDown={(e) => backImageOnDown(e)}
               />
             </Box>
-          }
+          )}
           <Box
             sx={{
               marginLeft: "1rem",
               marginTop: "1rem",
-              position: "absolute",
+              position: !disabled && "absolute",
               top: "0px",
               left: "0px",
             }}

@@ -29,13 +29,13 @@ const photoLocationSlice = createSlice({
 
     setPhotoDialogOpen: (state, action) => {
       const photoUrlRaw = action.payload;
+      state.photoSelected = "";
 
       state.photoSelected = filterOriginalPhoto(photoUrlRaw);
       state.photoDialogOpen = true;
     },
     setPhotoDialogClose: (state) => {
       state.photoDialogOpen = false;
-      state.photoSelected = "";
     },
   },
 });

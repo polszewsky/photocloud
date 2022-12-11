@@ -1,8 +1,6 @@
 import { Grid, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
-import Copyrights from "../../common/components/Copyrights";
-import LeviButton from "../../common/components/LeviButton";
 
 export default function About() {
   return (

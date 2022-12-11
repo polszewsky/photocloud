@@ -1,4 +1,4 @@
-import { Collapse, Grid, Typography } from "@mui/material";
+import { Collapse, Grid } from "@mui/material";
 import React, { Fragment, useState } from "react";
 import { useSelector } from "react-redux";
 import CommentEntry from "../../../common/components/CommentEntry";

@@ -7,7 +7,10 @@ import { fetchFakeComments } from "./comments/commentSectionSlice";
 import CommentSection from "./comments/CommentSection";
 import QuotesStructure from "./quotes/QuotesStructure";
 import ImageSection from "./images/ImageSection";
-import { setPhotoLocationData } from "./photoLocationSlice";
+import {
+  setPhotoDialogClose,
+  setPhotoLocationData,
+} from "./photoLocationSlice";
 import ImageFullDialog from "./images/ImageFullDialog";
 
 export default function PhotoLocation() {
@@ -15,6 +18,7 @@ export default function PhotoLocation() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    (() => dispatch(setPhotoDialogClose()))();
     (() => dispatch(fetchFakeComments()))();
     (() =>
       dispatch(setPhotoLocationData(fetchPhotoLocationObject(locationId))))();

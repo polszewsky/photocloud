@@ -57,7 +57,7 @@ const helsinki = {
 const oslo = {
   title: "oslo",
   subt: "nr",
-  que: "First time in Norway. Clean, fresh and green city. The food was great and the prices high. One of my favourite places. Will come back definitaly.",
+  que: "First time in Norway. Clean, fresh and green city. Food was great and prices high. One of my favourite places. I miss Oslo everyday.",
   images: [
     "https://i.imgur.com/JGmGJvhl.jpg",
     "https://i.imgur.com/db5J02ol.jpg",
@@ -101,7 +101,7 @@ const lmf22 = {
   title: "lmf22",
   locale: "Light Move Festival '22",
   subt: "pl",
-  que: "Lódź's LMF'22. Pretty lights and lots of people",
+  que: "Lodz's LMF. Pretty blinding lights in darkness and lots of people. After few years it's kinda the same. Shame :c",
   images: [
     "https://i.imgur.com/KJdn1FDl.jpg",
     "https://i.imgur.com/Cicm8FMl.jpg",
@@ -115,7 +115,7 @@ const lmf22 = {
 const drifts = {
   title: "drifts",
   subt: "pl",
-  que: "Drifts during winter. Cold, windy and rainy. Also: LOUD.",
+  que: "Drifts during winter with a friend in his red nissan. Cold, windy and rainy. Also loud...",
   images: [
     "https://i.imgur.com/DeoAjZIl.jpg",
     "https://i.imgur.com/5dk9wxdl.jpg",
@@ -130,7 +130,7 @@ const gdansk = {
   title: "gdansk",
   locale: "Gdańsk",
   subt: "pl",
-  que: "Gdańsk during winter. My yearly trip to see the winter sea and drink some wine. This time with sporty thermal underwear. But at least the weather was nice.",
+  que: "Gdansk during winter. My yearly trip to see thy sea and drink wine. This time with thermal underwear. Black and white edits, but at least the weather was nice.",
   images: [
     "https://i.imgur.com/5daQvRNl.jpg",
     "https://i.imgur.com/3LvLetrl.jpg",
@@ -159,7 +159,7 @@ const gdansk = {
 const szczawnica = {
   title: "szczawnica",
   subt: "pl",
-  que: "Turistic town located in Pieniny with great hiking trails. Nerby you can find 2 castles with a lake between. It's also close to Slovenia.",
+  que: "Turistic town located in Pieniny with great hiking trails. Nerby you can find 2 castles with a lake between them. It's also close to Slovenia, so.. Ahoy (Nope, that is CZ).",
   images: [
     "https://i.imgur.com/meymtncl.jpg",
     "https://i.imgur.com/6vCi7Xjl.jpg",
@@ -246,7 +246,7 @@ const aigues_mortes = {
   title: "aigues-mortes",
   locale: "Aigues Mortes",
   subt: "fr",
-  que: "City +  a square + high walls + lots of stone = Aigues Mortes. It's a strange place with people still living inside.",
+  que: "City +  a square + high walls + lots of stone = Aigues Mortes. It's a strange place with people still living inside. So much history.",
   images: [
     "https://i.imgur.com/sQHxTBdl.jpg",
     "https://i.imgur.com/9nSzcO1l.jpg",
@@ -260,7 +260,7 @@ const aigues_mortes = {
 const carcassonne = {
   title: "carcassonne",
   subt: "fr",
-  que: "Och the Carcassone. Romans build a castle there in the 1st century. Napoleone rebuild the castle centuries later... Then the Robid Hood movie filmed there.",
+  que: "Och the Carcassone. Romans build a castle there in the 1st century. Napoleone restored it centuries later... Then the Robid Hood movie filmed there.",
   images: [
     "https://i.imgur.com/j8vTu8gl.jpg",
     "https://i.imgur.com/7YNglNhl.jpg",
@@ -274,7 +274,7 @@ const carcassonne = {
 const arles = {
   title: "arles",
   subt: "fr",
-  que: "The outstanding colloseum and the catacombs are a `must see` city in southern France. Fun fact: Took some pictures with a package of chrisps, but forgot to send 'em for a contest :/",
+  que: "The outstanding colloseum and the catacombs are a `must see` city in southern France. Fun fact: Took some pictures with a package of chrisps, but forgot to send 'em for a contest. At least they traveled across the europe.",
   images: [
     "https://i.imgur.com/mcnscjNl.jpg",
     "https://i.imgur.com/ItGmb9Nl.jpg",
@@ -303,7 +303,7 @@ const pont_du_gard = {
 const montpellier = {
   title: "montpellier",
   subt: "fr",
-  que: "My sister used to study there. Great place, I wish I could go there again.",
+  que: "Amazing city with many mysterious places. Great architecture university. My sister used to study there. Wish I could go there again.",
   images: [
     "https://i.imgur.com/SRtxAKBl.jpg",
     "https://i.imgur.com/wRnaJ43l.jpg",
@@ -331,7 +331,7 @@ const avinion = {
 const paris = {
   title: "paris",
   subt: "fr",
-  que: "Paris... It speaks for itself. The home of the Exposition Universelle in 1878, Maria Curie and Oscar Wilde. Seen them graves, touched them stones.",
+  que: "Paris... It speaks for itself. The home of the Exposition Universelle in 1878, Maria Curie and Oscar Wilde. Seen them graves, touched them stones. Didn't see any rats, tho.",
   images: [
     "https://i.imgur.com/xzM7LT1l.jpg",
     "https://i.imgur.com/HInwd3Bl.jpg",
