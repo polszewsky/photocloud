@@ -24,7 +24,7 @@ export const CLOUD_DATA = [
   { value: "Gdańsk", count: getRandomArbitrary(min, max) }, // done
   { value: "Drifts", count: getRandomArbitrary(min, max) }, //done
   { value: "LMF22", count: getRandomArbitrary(min, max) }, //done
-  { value: "Strelitz", count: getRandomArbitrary(min, max) }, //done
+  //{ value: "Strelitz", count: getRandomArbitrary(min, max) }, //done
   { value: "Szczawnica", count: getRandomArbitrary(min, max) }, //done
   //south
   { value: "Warna", count: getRandomArbitrary(min, max) }, //done
@@ -141,20 +141,20 @@ const gdansk = {
   time: "February, 2022",
 };
 
-const strelitz = {
-  title: "strelitz",
-  locale: "Strzelce Opolskie",
-  subt: "pl",
-  que: "My GF's home town. Small, but cute place with colorful landscapes around.",
-  images: [
-    "https://i.imgur.com/dt7jWcTl.jpg",
-    "https://i.imgur.com/BY0OqxOl.jpg",
-    "https://i.imgur.com/lijDS05l.jpg",
-    "https://i.imgur.com/NHSzwNSl.jpg",
-    "https://i.imgur.com/tMEkJlHl.jpg",
-  ],
-  time: "August, 2021",
-};
+// const strelitz = {
+//   title: "strelitz",
+//   locale: "Strzelce Opolskie",
+//   subt: "pl",
+//   que: "My GF's home town. Small, but cute place with colorful landscapes around.",
+//   images: [
+//     "https://i.imgur.com/dt7jWcTl.jpg",
+//     "https://i.imgur.com/BY0OqxOl.jpg",
+//     "https://i.imgur.com/lijDS05l.jpg",
+//     "https://i.imgur.com/NHSzwNSl.jpg",
+//     "https://i.imgur.com/tMEkJlHl.jpg",
+//   ],
+//   time: "August, 2021",
+// };
 
 const szczawnica = {
   title: "szczawnica",
@@ -351,7 +351,7 @@ const PLACES = [
   gdansk,
   lmf22,
   //cp2077,
-  strelitz,
+  //strelitz,
   szczawnica,
   warna,
   akwizgran,
