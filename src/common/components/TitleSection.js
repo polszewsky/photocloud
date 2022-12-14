@@ -6,7 +6,8 @@ const TitleSx = styled(Typography)((props) => ({
   color: "#fefefe",
   letterSpacing: ".1rem",
   textShadow: "-1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5)",
-  overflow: "hidden",
+  overflow: "auto",
+  wordBreak: "break-all",
   textAlign: "center",
 
   // "&:before": {
@@ -25,9 +26,14 @@ const TitleSx = styled(Typography)((props) => ({
   // },
 }));
 
-export default function TitleSection({ title = "", sub = "", rest }) {
+export default function TitleSection({
+  title = "",
+  sub = "",
+  isMobile = false,
+  rest,
+}) {
   return (
-    <TitleSx variant="h1" {...rest} subtitle={title}>
+    <TitleSx variant={isMobile ? "h4" : "h1"} {...rest} subtitle={title}>
       {title}
       <span
         style={{

@@ -43,7 +43,7 @@ const notfound = {
 const helsinki = {
   title: "helsinki",
   subt: "fi",
-  que: "I was NOT prepared for the prices in Finland's capitol. Nor was I prepared for the weather, since the tempretures exceeded 30*C in the shadows. Besides getting sunburn and sun-rash, I had the pleasure to sightsee one of the nordic capitols. Weather you like #333 Cathedral (St Nicholas's Church), Suomenlinna Fortress or flowers in Botanical Garden be sure to grab OsloPass as well.",
+  que: "I was NOT prepared for the prices in Finland's capitol. Nor was I prepared for the weather, since the tempretures exceeded 30*C in the shadows. Besides getting sunburn and sun-rash, I had the pleasure to sightsee one of the nordic capitols. Weather you like White Cathedral (St Nicholas's Church), Suomenlinna Fortress or flowers in Botanical Garden be sure to grab OsloPass as well.",
   images: [
     "https://i.imgur.com/bWIUxZgl.jpg",
     "https://i.imgur.com/rjvkQUEl.jpg",
@@ -260,7 +260,7 @@ const aigues_mortes = {
 const carcassonne = {
   title: "carcassonne",
   subt: "fr",
-  que: "Och the Carcassone. Romans build a castle there in the 1st century. Napoleone restored it centuries later... Then the Robid Hood movie filmed there.",
+  que: "Och the Carcassonne. Romans build a castle there in the 1st century. Napoleone restored it centuries later... Then the Robid Hood movie filmed there.",
   images: [
     "https://i.imgur.com/j8vTu8gl.jpg",
     "https://i.imgur.com/7YNglNhl.jpg",

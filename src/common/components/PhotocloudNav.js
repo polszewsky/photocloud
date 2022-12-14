@@ -27,7 +27,7 @@ export default function PhotocloudNav() {
           >
             PHOTOCLOUD
           </Typography>
-          <AboutButton onClick={() => navigate("/about")}>About Me</AboutButton>
+          <AboutButton onClick={() => navigate("/about")}>About</AboutButton>
         </Toolbar>
       </AppBar>
     </Box>

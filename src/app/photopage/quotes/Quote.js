@@ -1,33 +1,22 @@
-import { FormatQuote } from "@mui/icons-material";
 import { Grid, Typography } from "@mui/material";
 import React from "react";
+import FormatQuoteOutlinedIcon from "@mui/icons-material/FormatQuoteOutlined";
 
 export default function Quote(props) {
-  const { comment = "", time = "", ...rest } = props;
+  const { comment = "", time = "", isMobile = false, ...rest } = props;
   return (
-    <Grid
-      item
-      xs={10}
-      sx={{
-        marginTop: "1rem",
-        paddingLeft: "1rem",
-        paddingRight: "1rem",
-        //boxShadow: "4px 12px 21px -4px rgba(100,100,100,.1)",
-      }}
-      {...rest}
-    >
-      <Typography>
-        <FormatQuote sx={{ color: "silver", fontSize: "30pt" }} />
-      </Typography>
+    <Grid item xs={10} {...rest}>
       <Typography
         align="justify"
         sx={{
           color: "#fefefe",
-          fontSize: "27pt",
+          fontSize: isMobile ? "16pt" : "27pt",
           fontFamily: "Bad Script",
           letterSpacing: "1px",
+          display: "inline-block",
         }}
       >
+        <FormatQuoteOutlinedIcon sx={{ color: "#1F1F1F", fontSize: "48pt" }} />
         {comment}
       </Typography>
       <br />

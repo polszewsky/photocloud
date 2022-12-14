@@ -1,5 +1,5 @@
-import { Container, Grid } from "@mui/material";
-import React, { useEffect } from "react";
+import { Grid } from "@mui/material";
+import React, { Fragment, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchPhotoLocationObject } from "../../common/photoUtils";
 import { useDispatch } from "react-redux";
@@ -25,7 +25,7 @@ export default function PhotoLocation() {
   }, [dispatch, locationId]);
 
   return (
-    <Container maxWidth="false" sx={{ height: "100vh" }}>
+    <Fragment>
       <Grid
         container
         direction="row"
@@ -46,6 +46,6 @@ export default function PhotoLocation() {
       {/* comments */}
       <CommentSection />
       <ImageFullDialog />
-    </Container>
+    </Fragment>
   );
 }

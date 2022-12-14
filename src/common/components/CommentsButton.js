@@ -30,11 +30,6 @@ const StyledButton = styled(ButtonUnstyled)({
     left: "7px",
     transition: "0.2s",
   },
-
-  "&:hover:after": {
-    top: "0px",
-    left: "0px",
-  },
 });
 //   @media (min-width: 768px) {
 //     .button-52 {

@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Box, Collapse, Grid } from "@mui/material";
+import { Box, Collapse, Grid, useMediaQuery, useTheme } from "@mui/material";
 import React, { useState } from "react";
 import { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -20,6 +20,10 @@ export default function ImageSection() {
   const { photoLocation, helpShown } = useSelector(
     (store) => store.photoLocation
   );
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   const disabled = photoLocation?.title === "unknown";
 
   const [image, setImage] = useState(0);
@@ -40,11 +44,14 @@ export default function ImageSection() {
       e.stopPropagation();
       return;
     }
+    e.preventDefault();
+    e.stopPropagation();
 
     if (disabled) return;
 
-    e.preventDefault();
+    //e.preventDefault();
     let x = (window.checkForDrag = e.clientX);
+
     setStartX(x);
   };
 
@@ -66,8 +73,10 @@ export default function ImageSection() {
   };
 
   const clickOrDrag = (e, image) => {
-    const mouseUp = e.clientX;
+    e.preventDefault();
+    e.stopPropagation();
 
+    const mouseUp = e.clientX;
     const distance = mouseUp - startX;
 
     if (
@@ -79,14 +88,35 @@ export default function ImageSection() {
 
     if (Math.abs(distance) < 75) {
       console.log("no drag!");
+      return;
     }
 
-    if (distance > 0) {
+    distance > 0 ? prev() : next();
+  };
+
+  // MOBILE
+  let touchstartX = 0;
+  let touchendX = 0;
+
+  function checkDirection() {
+    if (touchendX - touchstartX < -75) {
       next();
-    } else if (distance < 0) {
+    }
+    if (touchendX - touchstartX > 75) {
       prev();
     }
+  }
+
+  const onTouchStart = (e) => {
+    touchstartX = e.changedTouches[0].screenX;
   };
+
+  const onTouchEnd = (e, image) => {
+    touchendX = e.changedTouches[0].screenX;
+    checkDirection(image);
+  };
+
+  //MOBILE END
 
   return (
     <Grid
@@ -99,23 +129,25 @@ export default function ImageSection() {
     >
       {!disabled && (
         <Fragment>
-          <Grid item xs="auto" sx={{ textAlign: "flex-left" }}>
-            <Box sx={{ width: "100%" }}>
-              <Collapse in={helpShown}>
-                <TransparentAlert
-                  action={() => {
-                    dispatch(hideHelpAlert());
-                  }}
-                >
-                  Swipe left or right to change photos
-                </TransparentAlert>
-              </Collapse>
-            </Box>
+          <Grid
+            item
+            xs={isMobile ? "12" : "auto"}
+            sx={{ textAlign: "flex-left" }}
+          >
+            <Collapse in={helpShown}>
+              <TransparentAlert
+                action={() => {
+                  dispatch(hideHelpAlert());
+                }}
+              >
+                Swipe left or right to change photos
+              </TransparentAlert>
+            </Collapse>
           </Grid>
           <Box width="100%" />
         </Fragment>
       )}
-      <Grid item xs="auto">
+      <Grid item xs={isMobile ? 12 : "auto"}>
         <Box
           sx={{
             position: "relative",
@@ -134,7 +166,7 @@ export default function ImageSection() {
             >
               <img
                 style={{
-                  width: "auto",
+                  width: isMobile ? "100%" : "auto",
                   height: "auto",
                   filter: "blur(2px)",
                   borderRadius: "1px",
@@ -163,6 +195,10 @@ export default function ImageSection() {
               onMouseDown={(e) => mouseDownCoords(e)}
               onMouseUp={(e) =>
                 !disabled && clickOrDrag(e, photoLocation?.images[image])
+              }
+              onTouchStart={(e) => onTouchStart(e)}
+              onTouchEnd={(e) =>
+                !disabled && onTouchEnd(e, photoLocation?.images[image])
               }
             />
           </Box>

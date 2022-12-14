@@ -47,12 +47,11 @@ export default function About() {
         >
           <Grid item xs={12} sm={6} md={6}>
             <Typography variant="subtitle1" sx={{ textAlign: "justify" }}>
-              Hi, name's Peter & I happen to be a (senior but small-scale) full
-              stack dev with 7 years of experience in various web technologies.
-              Graduated from univeristy with Masters in IT with Databases &
-              Systems specialization. This small and basic app, codename
-              `PHOTOCLOUD` is a vertical slice of my what I use in my work as a
-              web developer{" "}
+              Hi, name's Peter & I happen to be a full stack dev with 7 years of
+              experience in various web technologies. Graduated from univeristy
+              with Masters in IT with Databases & Systems specialization. This
+              small and basic app, codename `PHOTOCLOUD` is a vertical slice of
+              my what I use in my work as a web developer{" "}
               <span style={{ fontStyle: "italic" }}>
                 (combined with my love for photography)
               </span>

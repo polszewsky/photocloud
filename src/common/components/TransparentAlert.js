@@ -20,9 +20,7 @@ export default function TransparentAlert({ children, action }) {
         </IconButton>
       }
     >
-      <Typography sx={{ color: "#DF3C3C", textTransform: "uppercase" }}>
-        {children}
-      </Typography>
+      <Typography sx={{ color: "#DF3C3C" }}>{children}</Typography>
     </Alert>
   );
 }

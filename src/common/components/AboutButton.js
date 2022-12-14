@@ -18,7 +18,7 @@ const StyledButton = styled(ButtonUnstyled)({
   justifyContent: "center",
   letterSpacing: "2px",
   lineHeight: "24px",
-  minWidth: "140px",
+  minWidth: "100px",
   outline: "0",
   padding: "0 17px",
   textAlign: "center",

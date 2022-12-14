@@ -15,7 +15,7 @@ export default function CommentSection() {
       direction="row"
       justifyContent="center"
       alignItems="center"
-      sx={{ marginTop: "2rem", padding: "0 0 1rem 0" }}
+      sx={{ marginTop: "2rem", marginBottom: "2rem" }}
     >
       <Grid item xs={10}>
         <Grid
@@ -29,7 +29,7 @@ export default function CommentSection() {
             <Grid container item direction="row">
               <Grid item xs={12}>
                 <CommentsButton onClick={() => setOpen(!open)}>
-                  Show/Hide Comments
+                  {open ? "Hide" : "Show"} Comments
                 </CommentsButton>
               </Grid>
             </Grid>
